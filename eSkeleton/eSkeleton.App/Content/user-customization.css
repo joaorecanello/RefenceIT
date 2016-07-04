@@ -1,0 +1,634 @@
+﻿/* Color Pallete */
+.clgreen {
+  color: #17a768 !important;
+}
+.clgreendark {
+  color: #117a4c;
+}
+.clgreenlight {
+  color: #1dd484;
+}
+.clorange {
+  color: #f1601d !important;
+}
+.clyellow {
+  color: #f1ad1d !important;
+}
+.clgreylight {
+  color: #cfc5b2 !important;
+}
+.clgreydark {
+  color: #9d8b64 !important;
+}
+.clbluelight {
+  color: #c1e2f6 !important;
+}
+.clbluedark {
+  color: #1d8bcf !important;
+}
+.clredlight {
+  color: #ff827e !important;
+}
+.clreddark {
+  color: #7e0400 !important;
+}
+/* Replace user-splash-screen.png with your own splash screen image */
+#msls-id-app-loading .msls-app-loading-img {
+  background-image: url(Images/user-splash-screen.png);
+}
+/* Font families for screen and dialog headers.  Font families for content inside a screen 
+    or dialog are determined by the theme's global font family setting. */
+.msls-header .ui-title {
+  font-family: 'Segoe Light', 'Segoe UI Light', 'Segoe UI', 'Segoe WP Light', 'Roboto Light', 'Frutiger', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+/* Customizable font styles for screen controls */
+.msls-font-style-small {
+  font-size: 12px;
+}
+/* Uncomment the following lines if you want to use certain jQuery Mobile listview features such as 
+    count bubbles and icons inside LightSwitch lists. jQuery Mobile relies on list items using 
+    position:relative for these features.  However, this setting performs poorly on certain mobile 
+    devices (webkit based in particular) when there are large numbers of items in the list. */
+/*
+.msls-ctl-list .ui-listview > .ui-li,
+.msls-ctl-list .ui-field-contain.ui-li {
+    position: relative;
+}
+*/
+/* Phone media query (portrait and landscape) */
+@media print {
+  @page {
+    size: landscape;
+  }
+  body * {
+    overflow: hidden;
+  }
+  .ui-mobile [data-role=page],
+  .ui-mobile [data-role=dialog],
+  .ui-page {
+    top: auto;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+  .only-print.block {
+    display: block !important;
+  }
+  .only-print.inline-block {
+    display: inline-block;
+  }
+  .print-undercover p {
+    margin: 5px 0 15px;
+  }
+  .google-visualization-table-tr-head {
+    background-color: #e4e9f4;
+    -webkit-print-color-adjust: exact;
+    font-weight: bold;
+    text-align: center;
+  }
+  th,
+  td {
+    border: solid #e4e9f4;
+    -webkit-print-color-adjust: exact;
+    border-width: 0 1px 1px 0;
+    padding: 2px .35em;
+    page-break-inside: avoid !important;
+  }
+  .google-visualization-table-sortind {
+    display: none;
+  }
+  .msls-header {
+    display: none;
+  }
+}
+.only-print {
+  display: none !important;
+}
+/* 
+    Reset Element Style Class 
+
+*/
+.reset-this {
+  animation: none;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-duration: 0;
+  animation-fill-mode: none;
+  animation-iteration-count: 1;
+  animation-name: none;
+  animation-play-state: running;
+  animation-timing-function: ease;
+  backface-visibility: visible;
+  background: 0;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: transparent;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  border: 0;
+  border-style: none;
+  border-width: medium;
+  border-color: inherit;
+  border-bottom: 0;
+  border-bottom-color: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-collapse: separate;
+  border-image: none;
+  border-left: 0;
+  border-left-color: inherit;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 0;
+  border-right: 0;
+  border-right-color: inherit;
+  border-right-style: none;
+  border-right-width: medium;
+  border-spacing: 0;
+  border-top: 0;
+  border-top-color: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-top-width: medium;
+  bottom: auto;
+  box-shadow: none;
+  box-sizing: content-box;
+  caption-side: top;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  columns: auto;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: auto;
+  content: normal;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: ltr;
+  display: inline;
+  empty-cells: show;
+  float: none;
+  font: normal;
+  font-family: inherit;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: auto;
+  hyphens: none;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  orphans: 0;
+  outline: 0;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: medium;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+  perspective: none;
+  perspective-origin: 50% 50%;
+  position: static;
+  /* May need to alter quotes for different locales (e.g fr) */
+  quotes: '\201C' '\201D' '\2018' '\2019';
+  right: auto;
+  tab-size: 8;
+  table-layout: auto;
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  text-decoration-color: inherit;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  transform: none;
+  transform-style: flat;
+  transition: none;
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transition-property: none;
+  transition-timing-function: ease;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: visible;
+  white-space: normal;
+  widows: 0;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+}
+/*
+    ReferenceIT Framework Classes
+*/
+.ref-home-menu-label {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.ref-li-menu-item {
+  text-align: center;
+  border: none;
+}
+.ref-active-tile-item {
+  border-color: #1d8bcf;
+}
+.ref-button:hover {
+  cursor: pointer;
+}
+.ref-button {
+  text-align: center;
+}
+.ref-small-button {
+  font-size: 20px !important;
+  width: 20px;
+}
+.ref-normal-button {
+  font-size: 25px !important;
+  width: 25px;
+}
+.ref-big-button {
+  font-size: 35px !important;
+  width: 40px;
+}
+.ref-add-button {
+  color: #51aee7;
+}
+.ref-edit-button {
+  color: #51aee7;
+}
+.ref-del-button {
+  color: #f1601d;
+}
+.ref-dashboard-button {
+  color: #17a768;
+}
+.ref-make-button {
+  color: #f1601d;
+}
+.ref-print-button {
+  color: #f1601d;
+}
+.ref-chart-button {
+  color: #cfc5b2 !important;
+}
+.ui-btn-active .ref-chart-button {
+  color: #f1601d !important;
+}
+.ref-mini-loader {
+  width: 36px;
+  height: 20px;
+  background: transparent;
+  border-radius: 0;
+  background-image: url(Images/horizontal-loader.gif);
+  background-size: contain !important;
+  background-repeat: no-repeat;
+}
+.ref-homechildren-menudetaillist .ref-homechildren-childrenmenus li p {
+  white-space: normal !important;
+}
+.ref-home-menudetaillist .ref-home-mastermenus li p {
+  white-space: normal !important;
+}
+/*
+    RoleDetailAddEdit Screen Classes
+*/
+.ref-permissiondetailssearch-permissiondetails li.msls-li.msls-style.ui-shadow.ui-li.ui-btn {
+  width: 100%;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerpermissions {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerpermissions label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerpermissions .ref-add-button {
+  margin-top: 5px;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerusers {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerusers label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-roledetailaddedit-details .ref-roledetailaddedit-headerusers .ref-add-button {
+  margin-top: 5px;
+}
+/*
+    UserDetailAddEdit Screen Classes
+*/
+.ref-userdetailaddedit-details .ref-userdetailaddedit-headerroles {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-userdetailaddedit-details .ref-userdetailaddedit-headerroles label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-userdetailaddedit-details .ref-userdetailaddedit-headerroles .ref-add-button {
+  margin-top: 5px;
+}
+/*
+    QuestionAddEdit Screen Classes
+*/
+.ref-questionaddedit-details .ref-question-headerquestionalternatives {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-questionaddedit-details .ref-question-headerquestionalternatives label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-questionaddedit-details .ref-question-headerquestionalternatives .ref-add-button {
+  margin-top: 5px;
+}
+.ref-questionaddedit-details .ref-questionalternative-commandbuttons > div {
+  float: right;
+}
+/*
+    QuestionnaireAddEdit Screen Classes
+*/
+.ref-questionnaireaddedit-details .ref-questionnaire-headerquestions {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-questionnaireaddedit-details .ref-questionnaire-headerquestions label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-questionnaireaddedit-details .ref-questionnaire-headerquestions .ref-add-button {
+  margin-top: 5px;
+}
+.ref-questionalternative-group2 .msls-label-align-left {
+  width: auto !important;
+  min-width: auto !important;
+}
+/*
+    QuestionnaireBrowse Screen Classes
+*/
+.ref-questionnairetemplatesbrowse-questionnairetemplatedetails .ref-questionnairetemplatedetail-questionnairetemplatecommands > div {
+  float: right;
+}
+/*
+    QuestionnaireTemplateAddEdit Screen Classes
+*/
+.ref-questionnairetemplateaddedit-details .ref-questionnairetemplate-headerquestions {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-questionnairetemplateaddedit-details .ref-questionnairetemplate-headerquestions label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-questionnairetemplateaddedit-details .ref-questionnairetemplate-headerquestions .ref-add-button {
+  margin-top: 5px;
+}
+.ref-questionnairetemplateaddedit-details .ref-questiontemplate-questiontype_fonticon {
+  text-align: center;
+  display: block;
+}
+/*
+    QuestionTemplateAddEdit Screen Classes
+*/
+.ref-questiontemplateaddedit-details .ref-questiontemplate-headerquestionalternativetemplates {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-questiontemplateaddedit-details .ref-questiontemplate-headerquestionalternativetemplates label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-questiontemplateaddedit-details .ref-questiontemplate-headerquestionalternativetemplates .ref-add-button {
+  margin-top: 5px;
+}
+.ref-questiontemplateaddedit-details .ref-questionalternativetemplate-commandbuttons > div {
+  float: right;
+}
+/*
+    SurveyBrowse Screen Classes
+*/
+.ref-surveysbrowse-surveydetails .ref-surveydetail-surveycommands > div {
+  float: right;
+}
+/*
+    SurveyAddEdit Screen Classes
+*/
+.ref-surveyaddedit-details .ref-survey-headerquestionnaires {
+  background-color: #c1e2f6;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.ref-surveyaddedit-details .ref-survey-headerquestionnaires label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.ref-surveyaddedit-details .ref-survey-headerquestionnaires .ref-add-button {
+  margin-top: 5px;
+}
+.ref-surveyaddedit-details .ref-survey-questionnairedetails .ref-questionnaire-questionnairecommands > div {
+  float: right;
+}
+/*
+    AdsBrowse Screen Classes
+*/
+.ref-ad-rows .ref-ad-adscommands > div {
+  float: right;
+}
+/*
+    SurveyReport Screen Classes
+*/
+.ref-surveyreport-questions th.google-visualization-table-th.gradient {
+  max-width: 800px;
+  height: 65px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.ref-surveyreport-questions ul.msls-listview .ui-li.ui-btn,
+ul.msls-listview .ui-li-static.ui-li,
+ul.msls-listview li {
+  padding: 0;
+  margin: 10px 1px 10px 0;
+  display: block;
+  page-break-inside: avoid !important;
+}
+.ref-surveyreport-questions ul {
+  list-style: none;
+}
+.ref-surveyreport-questions .ui-li,
+.ui-li.ui-field-contain {
+  border-top-width: 0;
+}
+.ref-surveyreport-questions .google-visualization-table-tr-odd {
+  background-color: rgba(238, 238, 238, 0.91);
+}
+.google-visualization-table-table th,
+.google-visualization-table-table td {
+  border: solid #bbae93;
+  border-width: 0 1px 1px 0;
+  padding: 2px .35em;
+}
+.ref-surveyreport-questions .google-visualization-table .gradient {
+  background-image: none !important;
+}
+.ref-surveyreport-questions .question-chart-header {
+  border-top: 1px solid rgba(49, 97, 57, 0.2);
+  padding: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 -5px;
+}
+.ref-surveyreport-questions .chart-header-options {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+.ref-surveyreport-questions .chart-header-option {
+  margin: 15px;
+  color: #cfc5b2;
+}
+.ref-surveyreport-questions .chart-header-option.active {
+  color: #166da2;
+}
+.ref-adreport-dados {
+  margin-top: 2px;
+}
+.ref-adreport-dados .ref-adreport-adheader {
+  background-color: #e4e9f4;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.ref-adreport-dados .ref-adreport-adheader .ref-adreport-adtitle {
+  font-weight: bold;
+}
+.ref-adreport-dados .ref-adreport-description {
+  padding: 5px 5px;
+  margin: 5px 0;
+}
+.ref-adreport-dados .ref-adreport-messageheader {
+  background-color: #e4e9f4;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.ref-adreport-visualizações table {
+  margin-top: 5px;
+}
+.ref-adreport-visualizações th {
+  background: #e4e9f4;
+}
+.ref-adreport-getadacceptancedetailsbyadid table {
+  margin-top: 5px;
+}
+.ref-adreport-getadacceptancedetailsbyadid th {
+  background: #e4e9f4;
+}
+.ref-surveyreport-details {
+  margin-top: 2px;
+}
+.ref-surveyreport-details .chart-component {
+  margin-bottom: 10px;
+}
+.ref-surveyreport-details .ref-survey-surveyheader {
+  background-color: #e4e9f4;
+  padding: 6px 10px;
+}
+.ref-surveyreport-details .ref-survey-surveyheader div label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.ref-surveyreport-details .ref-survey-group {
+  padding: 3px 5px;
+}
+.ref-surveyreport-details .ref-survey-group p {
+  margin: 5px 0;
+}
+.ref-surveyreport-details .ref-survey-questionnaireheader {
+  background-color: #e4e9f4;
+  padding: 6px 10px;
+}
+.ref-surveyreport-details .ref-survey-questionnaireheader label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.ref-surveyreport-details .ref-surveyreport-resultsheader {
+  background-color: #e4e9f4;
+  padding: 6px 10px;
+}
+.ref-surveyreport-details .ref-surveyreport-resultsheader label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.ref-surveyreport-details .ui-btn-active {
+  background: none;
+}
+.ref-surveyreport-details .ref-surveyreport-questionnaires {
+  padding: 10px 5px;
+}
+.ref-surveyreport-details .ref-surveyreport-questionnaires .msls-vauto.msls-control-header {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.ref-surveyreport-details .ref-surveyreport-questionnaires ul.msls-tile-list .ui-li.ui-btn {
+  margin: 0px 5px 0px 0px;
+}
+/*# sourceMappingURL=user-customization.css.map */

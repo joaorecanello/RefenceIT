@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="MenuDetail">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Label"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Indica o rótulo do menu" />
+          <DisplayName
+            Value="Rótulo" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Icon"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Indica o ícone que será mostrado para o menu" />
+          <DisplayName
+            Value="Ícone" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IconColor"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Indica a cor do ícone que será mostrado no menu" />
+          <DisplayName
+            Value="Cor do Ícone" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OnClick"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Indica o método Click associado ao Menu" />
+          <DisplayName
+            Value="Método Click" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HasChildren"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Description
+            Value="Indica se o menu tem filhos (submenus)" />
+          <DisplayName
+            Value="Tem Filhos?" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ParentTitle"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Indica o rótulo do menu pai para navegação na aplicação" />
+          <DisplayName
+            Value="Título do menu pai" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Order"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Description
+            Value="Indica a ordem de apresentação do menu" />
+          <DisplayName
+            Value="Ordem" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IsSecurity"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsSystem"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="SystemServiceData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="MenuDetails"
+      EntityType="MenuDetail" />
+    <QueryOperation
+      Name="MenuDetails_Single"
+      ReturnType="MenuDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MenuDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="MenuDetails_SingleOrDefault"
+      ReturnType="MenuDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MenuDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="SystemServiceDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="MenuDetails">
+      <EntitySetMapping.Attributes>
+        <WcfRiaEntitySet
+          EntitySetQuery="MenuDetails"
+          EntityTypeName="eSkeleton.Ria.Service.SystemServiceModels.MenuDetail" />
+        <WcfRiaProperty
+          Name="Id"
+          Property="MenuDetail/Properties[Id]" />
+        <WcfRiaProperty
+          Name="Label"
+          Property="MenuDetail/Properties[Label]" />
+        <WcfRiaProperty
+          Name="Icon"
+          Property="MenuDetail/Properties[Icon]" />
+        <WcfRiaProperty
+          Name="IconColor"
+          Property="MenuDetail/Properties[IconColor]" />
+        <WcfRiaProperty
+          Name="OnClick"
+          Property="MenuDetail/Properties[OnClick]" />
+        <WcfRiaProperty
+          Name="HasChildren"
+          Property="MenuDetail/Properties[HasChildren]" />
+        <WcfRiaProperty
+          Name="ParentTitle"
+          Property="MenuDetail/Properties[ParentTitle]" />
+        <WcfRiaProperty
+          Name="Order"
+          Property="MenuDetail/Properties[Order]" />
+        <WcfRiaProperty
+          Name="Description"
+          Property="MenuDetail/Properties[Description]" />
+        <WcfRiaProperty
+          Name="IsSecurity"
+          Property="MenuDetail/Properties[IsSecurity]" />
+        <WcfRiaProperty
+          Name="IsSystem"
+          Property="MenuDetail/Properties[IsSystem]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

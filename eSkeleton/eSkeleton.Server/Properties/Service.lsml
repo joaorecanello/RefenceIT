@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication"
+  Version="1.0.0.0" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <ModuleNamespace
+      Namespace="LightSwitchApplication" />
+    <Partial
+      IsPrimary="True" />
+  </ServiceApplication.Attributes>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
+    <EntityContainerGroupProperty
+      Name="SystemServiceData"
+      EntityContainer="SystemServiceData" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup
+    Name="LightSwitchServiceApplicationGroup">
+    <GlobalAttributeGroup.Attributes>
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <Permission
+    Name="Ad_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar avisos" />
+      <Description
+        Value="Indica se usuário pode adicionar avisos." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Ad_CanUpdate">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Modificar avisos" />
+      <Description
+        Value="Indica se usuário pode modificar avisos." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Ad_CanDelete">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Apagar avisos" />
+      <Description
+        Value="Indica se usuário pode apagar avisos." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="QuestionnaireTemplate_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar questionários modelo" />
+      <Description
+        Value="Indica se usuário pode adicionar questionários de modelo." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="QuestionnaireTemplate_CanUpdate">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Modificar questionários modelo" />
+      <Description
+        Value="Indica se usuário pode modificar questionários de modelo." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="QuestionnaireTemplate_CanDelete">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Apagar questionários modelo" />
+      <Description
+        Value="Indica se usuário pode apagar questionários de modelo." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="ResourceEnabling_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar habilitações" />
+      <Description
+        Value="Indica se usuário pode habilitar pesquisas e avisos." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="ResourceEnabling_CanUpdate">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Modificar habilitações" />
+      <Description
+        Value="Indica se usuário pode modificar habilitações de pesquisas e avisos. " />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="ResourceEnabling_CanDelete">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Apagar habilitações" />
+      <Description
+        Value="Indica se usuário pode apagar habilitações de pesquisas e avisos." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Survey_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar pesquisas" />
+      <Description
+        Value="Indica se usuário pode adicionar pesquisas." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Survey_CanUpdate">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Modificar pesquisas" />
+      <Description
+        Value="Indica se usuário pode modificar pesquisas." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Survey_CanDelete">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Apagar pesquisas" />
+      <Description
+        Value="Indica se usuário pode apagar pesquisas." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="SurveyReport_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ver resultado de pesquisas" />
+      <Description
+        Value="Inidica se usuário pode ver o resultado das pesquisas." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="AdReport_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ver aceite de avisos" />
+      <Description
+        Value="Indica se usuário pode ver os avisos aceitos. " />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="SystemAdministration">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adminitrador do Sistema" />
+      <Description
+        Value="Indica se o usuário é administrador do sistema (acesso completo)." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="ResourceVisualization_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar visualização de recurso" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Answer_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar resposta" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Ad_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ler os avisos" />
+      <Description
+        Value="Indica se o usuário pode ler os avisos cadastrados" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Survey_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ler as pesquisas" />
+      <Description
+        Value="Inidica se o usuário pode ler as pesquisas" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="QuestionnaireTemplate_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ler os questionários" />
+      <Description
+        Value="Indica se o usuário pode ver os questionários modelo" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="AdAcceptances_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar aceite em aviso" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="SurveyResponse_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar resposta de pesquisa" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="QuestionnaireResponse_CanInsert">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Adicionar resposta de questionário" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="SurveyResponse_CanRead">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Ler as respostas de pesquisas" />
+      <Description
+        Value="(Sistema)" />
+    </Permission.Attributes>
+  </Permission>
+</ServiceApplication>

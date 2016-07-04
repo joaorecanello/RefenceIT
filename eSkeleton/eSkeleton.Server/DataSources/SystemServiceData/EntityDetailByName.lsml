@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="SystemServiceData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <QueryOperation
+      Name="EntityDetailByName"
+      ReturnType="EntityDetail">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="entityName"
+        ParameterType=":String?" />
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="SystemServiceDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <QueryOperationMapping
+      Operation="EntityDetailByName">
+      <QueryOperationMapping.Attributes>
+        <WcfRiaQueryOperation
+          Name="EntityDetailByName" />
+        <WcfRiaQueryOperationParameter
+          Name="entityName"
+          QueryOperationParameter="SystemServiceData/Members[EntityDetailByName]/Parameters[entityName]" />
+      </QueryOperationMapping.Attributes>
+    </QueryOperationMapping>
+  </DataService>
+</ServiceApplication>

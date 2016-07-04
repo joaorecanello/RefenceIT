@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="UserDetail">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="UserName"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Password"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?" />
+      <NavigationProperty
+        Name="RoleUser"
+        Association="RoleUser"
+        FromEnd="UserDetail"
+        ToEnd="RoleUserDetail" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="SystemServiceData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="UserDetails"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="UserDetail" />
+    <QueryOperation
+      Name="UserDetails_Single"
+      ReturnType="UserDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserName" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserName" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="UserDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserName"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'UserName' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="UserDetails_SingleOrDefault"
+      ReturnType="UserDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserName" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserName" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="UserDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserName"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'UserName' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="RoleUser"
+      Association="RoleUser">
+      <AssociationSetEnd
+        Name="UserDetail"
+        EntitySet="UserDetails" />
+      <AssociationSetEnd
+        Name="RoleUserDetail"
+        EntitySet="RoleUserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="RoleUser">
+    <AssociationEnd
+      Name="UserDetail"
+      Multiplicity="One"
+      EntityType="UserDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="RoleUserDetail"
+      Multiplicity="Many"
+      EntityType="RoleUserDetail" />
+  </Association>
+  <DataService
+    Name="SystemServiceDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="UserDetails">
+      <EntitySetMapping.Attributes>
+        <WcfRiaEntitySet
+          EntitySetQuery="UserDetails"
+          EntityTypeName="eSkeleton.Ria.Service.SystemServiceModels.UserDetail" />
+        <WcfRiaProperty
+          Name="UserName"
+          Property="UserDetail/Properties[UserName]" />
+        <WcfRiaProperty
+          Name="Password"
+          Property="UserDetail/Properties[Password]" />
+        <WcfRiaProperty
+          Name="FullName"
+          Property="UserDetail/Properties[FullName]" />
+        <WcfRiaProperty
+          Name="RoleUser"
+          Property="UserDetail/Properties[RoleUser]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="RoleUser">
+      <AssociationSetMapping.Attributes>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RoleUser]/Members[UserDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="UserName" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RoleUser]/Members[RoleUserDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="UserName" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

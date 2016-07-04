@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="SystemServiceData"
+    DataProvider="CustomDataProvider">
+    <EntityContainer.Attributes>
+      <Partial
+        IsPrimary="True" />
+    </EntityContainer.Attributes>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <DataService
+    Name="SystemServiceDataDataService"
+    EntityContainer="SystemServiceData">
+    <DataService.Attributes>
+      <Partial
+        IsPrimary="True" />
+    </DataService.Attributes>
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="AssemblyName"
+        Value="eSkeleton.Ria.Service" />
+      <ConnectionProperty
+        Name="FullClassName"
+        Value="eSkeleton.Ria.SystemService" />
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="e2d328c2-7c47-4d04-9919-22f9b93e31ec" />
+      <ConnectionProperty
+        Name="ConnectionStringDescription"
+        Value="" />
+    </DataService.ConnectionProperties>
+  </DataService>
+</ServiceApplication>

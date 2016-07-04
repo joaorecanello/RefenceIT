@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="SystemServiceData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <QueryOperation
+      Name="ChildrenMenus"
+      ReturnType="MenuDetail*">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MenuDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="idMenu"
+        ParameterType=":Int32?" />
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="SystemServiceDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <QueryOperationMapping
+      Operation="ChildrenMenus">
+      <QueryOperationMapping.Attributes>
+        <WcfRiaQueryOperation
+          Name="ChildrenMenus" />
+        <WcfRiaQueryOperationParameter
+          Name="idMenu"
+          QueryOperationParameter="SystemServiceData/Members[ChildrenMenus]/Parameters[idMenu]" />
+      </QueryOperationMapping.Attributes>
+    </QueryOperationMapping>
+  </DataService>
+</ServiceApplication>

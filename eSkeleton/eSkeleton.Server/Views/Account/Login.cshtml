@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Entrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model LightSwitchApplication.Models.UserDTO
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="row logo">
+            <img src="~/Content/Images/logoSmall.png" />
+        </div>
+
+        <section id="loginForm">
+
+            @using (Ajax.BeginForm("Login", "Account", new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                OnFailure = "onLoginFailure(data)",
+                OnSuccess = "onLoginSuccess"
+            }))
+            {
+
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    @Html.TextBoxFor(model => model.UserName, new { @placeholder = "usuário", @class = "initialFocus" })
+                </div>
+
+                <div class="row">
+                    @Html.PasswordFor(model => model.Password, new { @placeholder = "senha" })
+                </div>
+
+                <div class="row">
+                    @Html.CheckBoxFor(model => model.RememberMe,
+                         new
+                         {
+                             @id = "checkRememberMe",
+                             data_toggle = "toggle",
+                             data_on = "lembrar!",
+                             data_off = "lembrar?",
+                             data_size = "small",
+                             data_onstyle = "checkToggleWelcomeColor",
+                             data_style = "checkBoxLogin"
+                         })
+                </div>
+
+                <div class="row">
+                    <button class="btn btn-default full-width btnlogin"><span class="glyphicon glyphicon-ok"></span></button>
+                </div>
+                <div class="row">
+                    <h6> Esqueceu sua senha? @Html.ActionLink("Clique Aqui", "Register") </h6>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/account.login")
+}
+
+

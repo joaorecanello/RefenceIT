@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="RoleDetail">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Name"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="RoleUserRole"
+        Association="RoleUserRole"
+        FromEnd="RoleDetail"
+        ToEnd="RoleUserDetail" />
+      <NavigationProperty
+        Name="RolePermissionRole"
+        Association="RolePermissionRole"
+        FromEnd="RoleDetail"
+        ToEnd="RolePermissionDetail" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="RoleUserRole">
+    <AssociationEnd
+      Name="RoleUserDetail"
+      Multiplicity="Many"
+      EntityType="RoleUserDetail" />
+    <AssociationEnd
+      Name="RoleDetail"
+      Multiplicity="One"
+      EntityType="RoleDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="RolePermissionRole">
+    <AssociationEnd
+      Name="RoleDetail"
+      Multiplicity="One"
+      EntityType="RoleDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="RolePermissionDetail"
+      Multiplicity="Many"
+      EntityType="RolePermissionDetail" />
+  </Association>
+  <EntityContainer
+    Name="SystemServiceData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="RoleDetails"
+      CanDelete="True"
+      CanInsert="True"
+      EntityType="RoleDetail" />
+    <AssociationSet
+      Name="RoleUserRole"
+      Association="RoleUserRole">
+      <AssociationSetEnd
+        Name="RoleUserDetail"
+        EntitySet="RoleUserDetails" />
+      <AssociationSetEnd
+        Name="RoleDetail"
+        EntitySet="RoleDetails" />
+    </AssociationSet>
+    <AssociationSet
+      Name="RolePermissionRole"
+      Association="RolePermissionRole">
+      <AssociationSetEnd
+        Name="RoleDetail"
+        EntitySet="RoleDetails" />
+      <AssociationSetEnd
+        Name="RolePermissionDetail"
+        EntitySet="RolePermissionDetails" />
+    </AssociationSet>
+    <QueryOperation
+      Name="RoleDetails_Single"
+      ReturnType="RoleDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Name" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Name" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="RoleDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Name"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Name' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="RoleDetails_SingleOrDefault"
+      ReturnType="RoleDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Name" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Name" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="RoleDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Name"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Name' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="SystemServiceDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="RoleDetails">
+      <EntitySetMapping.Attributes>
+        <WcfRiaEntitySet
+          EntitySetQuery="RoleDetails"
+          EntityTypeName="eSkeleton.Ria.Service.SystemServiceModels.RoleDetail" />
+        <WcfRiaProperty
+          Name="Name"
+          Property="RoleDetail/Properties[Name]" />
+        <WcfRiaProperty
+          Name="RoleUserRole"
+          Property="RoleDetail/Properties[RoleUserRole]" />
+        <WcfRiaProperty
+          Name="RolePermissionRole"
+          Property="RoleDetail/Properties[RolePermissionRole]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="RoleUserRole">
+      <AssociationSetMapping.Attributes>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RoleUserRole]/Members[RoleUserDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="RoleName" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RoleUserRole]/Members[RoleDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="Name" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="RolePermissionRole">
+      <AssociationSetMapping.Attributes>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RolePermissionRole]/Members[RoleDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="Name" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+        <WcfRiaAssociationSetEnd
+          End="SystemServiceData/Members[RolePermissionRole]/Members[RolePermissionDetail]">
+          <WcfRiaAssociationSetEnd.Attributes>
+            <WcfRiaPropertyRef
+              Name="RoleName" />
+          </WcfRiaAssociationSetEnd.Attributes>
+        </WcfRiaAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

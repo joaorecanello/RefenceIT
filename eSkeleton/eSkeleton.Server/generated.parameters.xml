@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DatabaseAdministratorConnectionString" description="Connection used to create or update the application database." defaultValue="" tags="SQLConnectionString" />
+  <parameter name="DatabaseServer" description="Name of the server that hosts the application database. Must match the server specified in the connection string." defaultValue="" tags="SQL" />
+  <parameter name="DatabaseName" description="Name of the application database. Must match the database specified in the connection string." defaultValue="eSkeleton" tags="SQL">
+    <parameterEntry kind="SqlCommandVariable" scope="eSkeleton.sql" match="DatabaseName" />
+  </parameter>
+  <parameter name="DatabaseUserName" description="User name that the application will use to connect to the application database." defaultValue="" tags="SQL">
+    <parameterEntry kind="SqlCommandVariable" scope="eSkeleton.sql" match="DatabaseUserName" />
+  </parameter>
+  <parameter name="DatabaseUserPassword" description="Password for the database user name." defaultValue="" tags="SQL,Password,New">
+    <parameterEntry kind="SqlCommandVariable" scope="eSkeleton.sql" match="DatabaseUserPassword" />
+  </parameter>
+  <parameter name="DefaultDataPath" description="" defaultValue="" tags="SQL,Hidden">
+    <parameterEntry kind="SqlCommandVariable" scope="eSkeleton.sql" match="DefaultDataPath" />
+  </parameter>
+  <parameter name="dbFullSql_Path" description="" defaultValue="{DatabaseAdministratorConnectionString}" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="dbFullSql" match="eSkeleton.sql" />
+  </parameter>
+  <parameter name="Update web.config connection string" description="" defaultValue="Data Source={DatabaseServer};Database={DatabaseName};uid={DatabaseUserName};Pwd={DatabaseUserPassword};" tags="Hidden">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//connectionStrings/add[@name='_IntrinsicData']/@connectionString" />
+  </parameter>
+  <parameter name="eSkeleton_IisWebApplication" description="IIS Web Application content location" defaultValue="Default Web Site/eSkeleton" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\webapps\\referenceit\\eSkeleton\\eSkeleton\\bin\\Debug\\app\.publish\\$" />
+  </parameter>
+  <parameter name="eSkeleton.Ria.eAdService" description="Configure the custom connection string." defaultValue="data source=192.168.2.144;initial catalog=eSkeleton;persist security info=True;user id=sa;password=lyceum" tags="None">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='eSkeleton.Ria.eAdService']/@connectionString" />
+  </parameter>
+  <parameter name="eSkeleton.Ria.eAskService" description="Configure the custom connection string." defaultValue="data source=192.168.2.144;initial catalog=eSkeleton;persist security info=True;user id=sa;password=lyceum" tags="None">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='eSkeleton.Ria.eAskService']/@connectionString" />
+  </parameter>
+  <parameter name="eSkeleton.Ria.eSkeletonService" description="Configure the custom connection string." defaultValue="data source=192.168.2.144;initial catalog=eSkeleton;persist security info=True;user id=sa;password=lyceum" tags="None">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='eSkeleton.Ria.eSkeletonService']/@connectionString" />
+  </parameter>
+  <parameter name="eSkeleton.Ria.LyceumWrapService" description="Configure the custom connection string." defaultValue="data source=192.168.2.144;initial catalog=Lyceum;persist security info=True;user id=sa;password=lyceum" tags="None">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='eSkeleton.Ria.LyceumWrapService']/@connectionString" />
+  </parameter>
+  <parameter name="eSkeleton.Ria.SystemService" description="Configure the custom connection string." defaultValue="data source=192.168.2.144;initial catalog=eSkeleton;persist security info=True;user id=sa;password=lyceum" tags="None">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='eSkeleton.Ria.SystemService']/@connectionString" />
+  </parameter>
+  <parameter name="LyceumData" description="Configure the ConnectionString" defaultValue="data source=192.168.2.144;initial catalog=Lyceum;persist security info=True;user id=sa;password=lyceum" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='LyceumData']/@connectionString" />
+  </parameter>
+  <parameter name="Application Administrator User Name" description="The user name of the user that will define users and roles in the application." defaultValue="" tags="applicationSettings">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.UserName' and @value='AdministratorUserName']/@value" />
+  </parameter>
+  <parameter name="Application Administrator Full Name" description="The full name of the user that will define users and roles in the application." defaultValue="" tags="applicationSettings">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.FullName' and @value='AdministratorFullName']/@value" />
+  </parameter>
+  <parameter name="Application Administrator Password" description="The password of the user that will define users and roles in the application." defaultValue="" tags="Password,New,applicationSettings">
+    <parameterValidation kind="RegularExpression" validationString="^(?=.{7,})(?=(.*[\W\p{Pc}].*){1,})" />
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.Password' and @value='AdministratorPassword']/@value" />
+  </parameter>
+</parameters>

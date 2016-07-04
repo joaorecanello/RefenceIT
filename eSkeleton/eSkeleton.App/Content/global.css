@@ -1,0 +1,35 @@
+﻿/* Color Pallete */
+.clgreen {
+  color: #17a768 !important;
+}
+.clgreendark {
+  color: #117a4c;
+}
+.clgreenlight {
+  color: #1dd484;
+}
+.clorange {
+  color: #f1601d !important;
+}
+.clyellow {
+  color: #f1ad1d !important;
+}
+.clgreylight {
+  color: #cfc5b2 !important;
+}
+.clgreydark {
+  color: #9d8b64 !important;
+}
+.clbluelight {
+  color: #c1e2f6 !important;
+}
+.clbluedark {
+  color: #1d8bcf !important;
+}
+.clredlight {
+  color: #ff827e !important;
+}
+.clreddark {
+  color: #7e0400 !important;
+}
+/*# sourceMappingURL=global.css.map */
