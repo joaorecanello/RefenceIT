@@ -63,9 +63,6 @@
     <Content Include="Content\global.css">
       <DependentUpon>global.less</DependentUpon>
     </Content>
-    <Content Include="Content\global.css.map">
-      <DependentUpon>global.css</DependentUpon>
-    </Content>
     <Content Include="Content\global.less" />
     <Content Include="Content\global.min.css">
       <DependentUpon>global.css</DependentUpon>
@@ -96,9 +93,6 @@
     <Content Include="Content\page-style.css">
       <DependentUpon>page-style.less</DependentUpon>
     </Content>
-    <Content Include="Content\page-style.css.map">
-      <DependentUpon>page-style.css</DependentUpon>
-    </Content>
     <Content Include="Content\page-style.less" />
     <Content Include="Content\page-style.min.css">
       <DependentUpon>page-style.css</DependentUpon>
@@ -109,33 +103,21 @@
     <Content Include="Content\ref_msls-ref-2.5.1.css">
       <DependentUpon>ref_msls-ref-2.5.1.less</DependentUpon>
     </Content>
-    <Content Include="Content\ref_msls-ref-2.5.1.css.map">
-      <DependentUpon>ref_msls-ref-2.5.1.css</DependentUpon>
-    </Content>
     <Content Include="Content\ref_msls-ref-2.5.1.less" />
     <Content Include="Content\ref_msls-ref-2.5.1.min.css">
       <DependentUpon>ref_msls-ref-2.5.1.css</DependentUpon>
     </Content>
     <Content Include="Content\ref_theme-2.5.1.css" />
-    <Content Include="Content\ref_theme-2.5.1.css.map">
-      <DependentUpon>ref_theme-2.5.1.css</DependentUpon>
-    </Content>
     <Content Include="Content\ref_theme-2.5.1.less" />
     <Content Include="Content\ref_theme-2.5.1.min.css">
       <DependentUpon>ref_theme-2.5.1.css</DependentUpon>
     </Content>
     <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.css.map">
-      <DependentUpon>toastr.css</DependentUpon>
-    </Content>
     <Content Include="Content\toastr.less" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\user-customization.css">
       <DependentUpon>user-customization.less</DependentUpon>
-    </Content>
-    <Content Include="Content\user-customization.css.map">
-      <DependentUpon>user-customization.css</DependentUpon>
     </Content>
     <Content Include="Content\user-customization.less" />
     <Content Include="Content\user-customization.min.css">
