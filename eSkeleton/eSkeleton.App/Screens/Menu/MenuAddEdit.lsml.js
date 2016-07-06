@@ -29,15 +29,18 @@ myapp.MenuAddEdit.created = function (screen) {
 
 myapp.MenuAddEdit.Icon1_render = function (element, contentItem) {
 
+    // update icon of item on changed...
     contentItem.dataBind('value', function (value) {
         var htmlIcon =
             String.format(
-                '<i class="fa fa-{0} {1}" style="font-size:35px;" />',
+                '<i class="{0} {1}" style="font-size:35px;" />',
                 contentItem.value,
                 contentItem.data.IconColor
            );
 
+        // prevent remove old icon;
         $(element).children().remove();
+        // add new icon;
         $(htmlIcon).appendTo($(element));
 
     });
