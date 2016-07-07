@@ -119,6 +119,9 @@
     <Content Include="Content\user-customization.css">
       <DependentUpon>user-customization.less</DependentUpon>
     </Content>
+    <Content Include="Content\user-customization.css.map">
+      <DependentUpon>user-customization.css</DependentUpon>
+    </Content>
     <Content Include="Content\user-customization.less" />
     <Content Include="Content\user-customization.min.css">
       <DependentUpon>user-customization.css</DependentUpon>

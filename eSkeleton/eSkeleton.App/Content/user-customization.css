@@ -36,18 +36,25 @@
 #msls-id-app-loading .msls-app-loading-img {
   background-image: url(Images/user-splash-screen.png);
 }
-/* Font families for screen and dialog headers.  Font families for content inside a screen 
+/* Font families for screen and dialog headers.  Font families for content inside a screen
     or dialog are determined by the theme's global font family setting. */
 .msls-header .ui-title {
   font-family: 'Segoe Light', 'Segoe UI Light', 'Segoe UI', 'Segoe WP Light', 'Roboto Light', 'Frutiger', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 /* Customizable font styles for screen controls */
-.msls-font-style-small {
+.msls-font-style-large {
+  font-weight: bold;
   font-size: 12px;
 }
-/* Uncomment the following lines if you want to use certain jQuery Mobile listview features such as 
-    count bubbles and icons inside LightSwitch lists. jQuery Mobile relies on list items using 
-    position:relative for these features.  However, this setting performs poorly on certain mobile 
+.msls-font-style-normal {
+  font-size: 12px;
+}
+.msls-font-style-small {
+  font-size: 10px;
+}
+/* Uncomment the following lines if you want to use certain jQuery Mobile listview features such as
+    count bubbles and icons inside LightSwitch lists. jQuery Mobile relies on list items using
+    position:relative for these features.  However, this setting performs poorly on certain mobile
     devices (webkit based in particular) when there are large numbers of items in the list. */
 /*
 .msls-ctl-list .ui-listview > .ui-li,
@@ -105,8 +112,8 @@
 .only-print {
   display: none !important;
 }
-/* 
-    Reset Element Style Class 
+/*
+    Reset Element Style Class
 
 */
 .reset-this {

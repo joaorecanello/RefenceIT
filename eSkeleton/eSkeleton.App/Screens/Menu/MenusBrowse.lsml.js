@@ -24,17 +24,22 @@ myapp.MenusBrowse.Icon_render = function (element, contentItem) {
 
 myapp.MenusBrowse.Name_postRender = function (element, contentItem) {
 
+    $(element).attr('id', contentItem.data.Id);
+
     contentItem.dataBind('value', function (newValue) {
         if (newValue != undefined)
-            $(element).text(String.format('{0} - {1}', contentItem.data.Name, contentItem.data.Label));
+            $(String.format('#{0}', contentItem.data.Id)).text(String.format('{0} - {1}', contentItem.data.Name, contentItem.data.Label));
     });
 
+    $(element).addClass();
+
 };
+
 myapp.MenusBrowse.Label_postRender = function (element, contentItem) {
 
     contentItem.dataBind('value', function (newValue) {
         if (newValue != undefined)
-            $(element).text(String.format('{0} - {1}', contentItem.data.Name, contentItem.data.Label));
+            $(String.format('#{0}', contentItem.data.Id)).text(String.format('{0} - {1}', contentItem.data.Name, contentItem.data.Label));
     });
 
 };
@@ -83,6 +88,7 @@ myapp.MenusBrowse.refButtonDelMenu_render = function (element, contentItem) {
 
 
 };
+
 myapp.MenusBrowse.created = function (screen) {
     // Write code here.
     screen.IsMaster = true;

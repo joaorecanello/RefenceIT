@@ -118,7 +118,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="Small"
+                              Value="Large"
                               ResultType=":String" />
                           </ChainExpression>
                         </ScreenExpressionTree>
